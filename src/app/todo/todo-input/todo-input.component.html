@@ -1,0 +1,21 @@
+<div class="input mt-5">
+  <form class="d-flex align-items-center justify-content-start flex-wrap">
+    <div class="flex-fill">
+      <input
+        type="text"
+        class="form-control"
+        #inpTask
+        (input)="onInput(inpTask.value)"
+        [value]="task"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary ms-3"
+      (click)="AddTodo(); $event.preventDefault()"
+    >
+      Submit
+    </button>
+  </form>
+</div>

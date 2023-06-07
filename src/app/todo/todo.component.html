@@ -1,0 +1,5 @@
+<div class="container">
+  <H1 class="text-center my-3">My Todo List</H1>
+  <app-todo-input (outputList)="addList($event)"></app-todo-input>
+  <app-todo-output [displayList]="list"></app-todo-output>
+</div>

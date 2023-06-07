@@ -1,0 +1,26 @@
+<div class="output mt-5">
+  <div *ngIf="displayList.length === 0">
+    <h4 class="text-center">No Task !</h4>
+  </div>
+
+  <table class="table text-center" *ngIf="displayList.length > 0">
+    <thead>
+      <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Mark</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of displayList">
+        <td [ngClass]="task.isActive ? 'active' : ''">{{ task.todo }}</td>
+        <td><input type="checkbox" (input)="checkTask(task)" /></td>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="deleteTask(task)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
